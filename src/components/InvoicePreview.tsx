@@ -265,6 +265,23 @@ export const InvoicePreview: React.FC<InvoicePreviewProps> = ({ invoice, onBack 
             </div>
           </div>
 
+          {/* Payment QR Codes Section */}
+          <div className="border-t-2 border-gray-300 pt-3 mt-4">
+            <div className="text-center mb-3">
+              <p className="text-xs font-semibold text-gray-700">ស្កេនដើម្បីបង់ប្រាក់ / Scan to Pay</p>
+            </div>
+            <div className="flex justify-center gap-4">
+              <div className="text-center">
+                <img src="/qr-code-dolla.jpg" alt="USD QR Code" className="w-24 h-24 mx-auto border border-gray-300 rounded" />
+                <p className="text-[10px] text-gray-600 mt-1 font-medium">ដុល្លារ / USD</p>
+              </div>
+              <div className="text-center">
+                <img src="/qr-code-rial.jpg" alt="Riel QR Code" className="w-24 h-24 mx-auto border border-gray-300 rounded" />
+                <p className="text-[10px] text-gray-600 mt-1 font-medium">រៀល / KHR</p>
+              </div>
+            </div>
+          </div>
+
           <div className="border-t-2 border-gray-300 pt-3 mt-4 text-center">
             <p className="text-[10px] text-gray-600 italic">សូមអរគុណ!</p>
             <p className="text-[10px] text-gray-600 italic">Thank you for your purchase!</p>
