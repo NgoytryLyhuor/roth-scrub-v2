@@ -180,26 +180,26 @@ export const InvoicePreview: React.FC<InvoicePreviewProps> = ({ invoice, onBack 
         <div ref={invoiceRef} className="p-4">
           <div className="text-center mb-4 pb-3 border-b-2 border-emerald-700">
             <img src="/scrub.jpg" alt="Scrub Logo" className="w-20 h-20 mx-auto mb-2 rounded-full object-cover" />
-            <h1 className="text-2xl font-bold text-emerald-700 mb-1">SCRUB INVOICE</h1>
             <div className="text-xs text-gray-600">វិក័យប័ត្រ Scrub</div>
+            <h1 className="text-2xl font-bold text-emerald-700 mb-1">SCRUB INVOICE</h1>
           </div>
 
           <div className="grid grid-cols-2 gap-3 mb-4 text-xs">
             <div>
-              <div className="font-semibold text-gray-700 mb-1">Customer / អតិថិជន:</div>
+              <div className="font-semibold text-gray-700 mb-1">អតិថិជន / Customer:</div>
               <div className="text-gray-900">{invoice.customerName}</div>
             </div>
             <div>
-              <div className="font-semibold text-gray-700 mb-1">Date / ថ្ងៃទី:</div>
+              <div className="font-semibold text-gray-700 mb-1">ថ្ងៃទី / Date:</div>
               <div className="text-gray-900">{formatKhmerDate(invoice.date)}</div>
             </div>
             <div>
-              <div className="font-semibold text-gray-700 mb-1">Seller / អ្នកលក់:</div>
+              <div className="font-semibold text-gray-700 mb-1">អ្នកលក់ / Seller:</div>
               <div className="text-gray-900">{invoice.sellerName}</div>
             </div>
             <div>
-              <div className="font-semibold text-gray-700 mb-1">Currency / រូបិយប័ណ្ណ:</div>
-              <div className="text-gray-900">{invoice.currency === 'USD' ? 'US Dollar ($)' : 'Khmer Riel (៛)'}</div>
+              <div className="font-semibold text-gray-700 mb-1">រូបិយប័ណ្ណ / Currency:</div>
+              <div className="text-gray-900">{invoice.currency === 'USD' ? 'ដុល្លារ ($)' : 'រៀល (៛)'}</div>
             </div>
           </div>
 
@@ -207,11 +207,11 @@ export const InvoicePreview: React.FC<InvoicePreviewProps> = ({ invoice, onBack 
             <table className="w-full border-collapse">
               <thead>
                 <tr className="bg-emerald-700 text-white">
-                  <th className="border border-emerald-600 px-1.5 py-1.5 text-[10px] font-semibold w-8">No</th>
-                  <th className="border border-emerald-600 px-1.5 py-1.5 text-[10px] font-semibold text-left">Product<br/><span className="font-normal">ឈ្មោះទំនិញ</span></th>
-                  <th className="border border-emerald-600 px-1.5 py-1.5 text-[10px] font-semibold w-14">Qty<br/><span className="font-normal">បរិមាណ</span></th>
-                  <th className="border border-emerald-600 px-1.5 py-1.5 text-[10px] font-semibold w-20">Unit Price<br/><span className="font-normal">តម្លៃ</span></th>
-                  <th className="border border-emerald-600 px-1.5 py-1.5 text-[10px] font-semibold w-24">Amount<br/><span className="font-normal">សរុប</span></th>
+                  <th className="border border-emerald-600 px-1.5 py-1.5 text-[10px] font-semibold w-8">ល.រ<br/><span className="font-normal">No</span></th>
+                  <th className="border border-emerald-600 px-1.5 py-1.5 text-[10px] font-semibold text-left">ឈ្មោះទំនិញ<br/><span className="font-normal">Product</span></th>
+                  <th className="border border-emerald-600 px-1.5 py-1.5 text-[10px] font-semibold w-14">បរិមាណ<br/><span className="font-normal">Qty</span></th>
+                  <th className="border border-emerald-600 px-1.5 py-1.5 text-[10px] font-semibold w-20">តម្លៃ<br/><span className="font-normal">Price</span></th>
+                  <th className="border border-emerald-600 px-1.5 py-1.5 text-[10px] font-semibold w-24">សរុប<br/><span className="font-normal">Amount</span></th>
                 </tr>
               </thead>
               <tbody>
@@ -240,34 +240,34 @@ export const InvoicePreview: React.FC<InvoicePreviewProps> = ({ invoice, onBack 
           <div className="flex justify-end mb-4">
             <div className="w-64 space-y-1">
               <div className="flex justify-between items-center py-1 border-b border-gray-300">
-                <span className="text-xs font-semibold text-gray-700">Subtotal / សរុបរង:</span>
+                <span className="text-xs font-semibold text-gray-700">សរុបរង / Subtotal:</span>
                 <span className="text-xs font-bold text-gray-900">{formatCurrency(invoice.subtotal, invoice.currency)}</span>
               </div>
 
               {invoice.discountPercent > 0 && (
                 <div className="flex justify-between items-center py-1 border-b border-gray-300">
-                  <span className="text-xs font-semibold text-gray-700">Discount / បញ្ចុះតម្លៃ ({invoice.discountPercent}%):</span>
+                  <span className="text-xs font-semibold text-gray-700">បញ្ចុះតម្លៃ / Discount ({invoice.discountPercent}%):</span>
                   <span className="text-xs font-bold text-red-600">-{formatCurrency(invoice.subtotal * (invoice.discountPercent / 100), invoice.currency)}</span>
                 </div>
               )}
 
               {invoice.deliveryFee > 0 && (
                 <div className="flex justify-between items-center py-1 border-b border-gray-300">
-                  <span className="text-xs font-semibold text-gray-700">Delivery Fee / ថ្លៃដឹកជញ្ជូន:</span>
+                  <span className="text-xs font-semibold text-gray-700">ថ្លៃដឹកជញ្ជូន / Delivery:</span>
                   <span className="text-xs font-bold text-emerald-600">+{formatCurrency(invoice.deliveryFee, invoice.currency)}</span>
                 </div>
               )}
 
               <div className="flex justify-between items-center py-2 bg-emerald-700 text-white px-2 rounded">
-                <span className="text-sm font-bold">TOTAL / សរុប:</span>
+                <span className="text-sm font-bold">សរុប / TOTAL:</span>
                 <span className="text-base font-bold">{formatCurrency(invoice.total, invoice.currency)}</span>
               </div>
             </div>
           </div>
 
           <div className="border-t-2 border-gray-300 pt-3 mt-4 text-center">
-            <p className="text-[10px] text-gray-600 italic">Thank you for your purchase!</p>
             <p className="text-[10px] text-gray-600 italic">សូមអរគុណ!</p>
+            <p className="text-[10px] text-gray-600 italic">Thank you for your purchase!</p>
           </div>
         </div>
       </div>
