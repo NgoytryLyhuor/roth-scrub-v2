@@ -43,10 +43,21 @@ export const InvoicePreview: React.FC<InvoicePreviewProps> = ({ invoice, onBack 
     if (!invoiceRef.current) return null;
 
     try {
+      // Wait for fonts to load
+      await document.fonts.ready;
+      
       const canvas = await html2canvas(invoiceRef.current, {
-        scale: 2,
+        scale: 3,
         backgroundColor: '#ffffff',
         logging: false,
+        useCORS: true,
+        allowTaint: true,
+        onclone: (clonedDoc) => {
+          // Ensure fonts are applied in cloned document
+          const style = clonedDoc.createElement('style');
+          style.textContent = `* { font-family: 'Hanuman', 'Nunito', sans-serif !important; }`;
+          clonedDoc.head.appendChild(style);
+        }
       });
 
       return canvas;
