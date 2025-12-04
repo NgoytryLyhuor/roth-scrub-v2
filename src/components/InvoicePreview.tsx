@@ -273,11 +273,11 @@ export const InvoicePreview: React.FC<InvoicePreviewProps> = ({ invoice, onBack 
             </div>
             <div className="flex justify-center gap-6">
               <div className="text-center bg-gray-50 p-3 rounded-lg border border-gray-200">
-                <img src="/qr-code-dolla.jpg" alt="USD QR Code" className="w-32 h-32 mx-auto rounded shadow-sm" />
+                <img src="/qr-code-dolla.jpg" alt="USD QR Code" className="w-44 h-auto mx-auto rounded shadow-sm" />
                 <p className="text-xs text-gray-700 mt-2 font-semibold">ដុល្លារ / USD</p>
               </div>
               <div className="text-center bg-gray-50 p-3 rounded-lg border border-gray-200">
-                <img src="/qr-code-rial.jpg" alt="Riel QR Code" className="w-32 h-32 mx-auto rounded shadow-sm" />
+                <img src="/qr-code-rial.jpg" alt="Riel QR Code" className="w-44 h-auto mx-auto rounded shadow-sm" />
                 <p className="text-xs text-gray-700 mt-2 font-semibold">រៀល / KHR</p>
               </div>
             </div>
