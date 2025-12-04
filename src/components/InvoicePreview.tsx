@@ -266,18 +266,19 @@ export const InvoicePreview: React.FC<InvoicePreviewProps> = ({ invoice, onBack 
           </div>
 
           {/* Payment QR Codes Section */}
-          <div className="border-t-2 border-gray-300 pt-3 mt-4">
-            <div className="text-center mb-3">
-              <p className="text-xs font-semibold text-gray-700">ស្កេនដើម្បីបង់ប្រាក់ / Scan to Pay</p>
+          <div className="border-t-2 border-emerald-700 pt-4 mt-4">
+            <div className="text-center mb-4">
+              <p className="text-sm font-bold text-emerald-700">ស្កេនដើម្បីបង់ប្រាក់</p>
+              <p className="text-xs text-gray-600">Scan to Pay</p>
             </div>
-            <div className="flex justify-center gap-4">
-              <div className="text-center">
-                <img src="/qr-code-dolla.jpg" alt="USD QR Code" className="w-24 h-24 mx-auto border border-gray-300 rounded" />
-                <p className="text-[10px] text-gray-600 mt-1 font-medium">ដុល្លារ / USD</p>
+            <div className="flex justify-center gap-6">
+              <div className="text-center bg-gray-50 p-3 rounded-lg border border-gray-200">
+                <img src="/qr-code-dolla.jpg" alt="USD QR Code" className="w-32 h-32 mx-auto rounded shadow-sm" />
+                <p className="text-xs text-gray-700 mt-2 font-semibold">ដុល្លារ / USD</p>
               </div>
-              <div className="text-center">
-                <img src="/qr-code-rial.jpg" alt="Riel QR Code" className="w-24 h-24 mx-auto border border-gray-300 rounded" />
-                <p className="text-[10px] text-gray-600 mt-1 font-medium">រៀល / KHR</p>
+              <div className="text-center bg-gray-50 p-3 rounded-lg border border-gray-200">
+                <img src="/qr-code-rial.jpg" alt="Riel QR Code" className="w-32 h-32 mx-auto rounded shadow-sm" />
+                <p className="text-xs text-gray-700 mt-2 font-semibold">រៀល / KHR</p>
               </div>
             </div>
           </div>
