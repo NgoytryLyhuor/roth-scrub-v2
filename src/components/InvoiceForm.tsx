@@ -11,11 +11,12 @@ const STORAGE_KEY = 'roth_scrub_invoice_data_v1';
 
 // 4 Scrub Products (Khmer names)
 const PRODUCTS = [
+  'ស្ក្រាប់មួយឈុត',
   'ស្រ្កាប់ពន្លៃរមៀត',
   'ស្ក្រាប់ដូងខ្ទិះ',
   'ស្រ្កាប់កាហ្វេ',
   'ស្ក្រាប់តែបៃតង',
-  'ស្ក្រាប់មួយឈុត'
+  
 ];
 
 // Helper functions
